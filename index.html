@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Volc'en danse</title>
+<meta name="description" content="L'actu de la danse contemporaine en Auvergne : spectacles, stages, auditions, agenda, boutiques et annuaire des lieux de danse autour de Clermont-Ferrand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Karla:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F5F4F6;
+  --paper-2: #EBE8EE;
+  --ink: #221A26;
+  --ink-soft: #5A5160;
+  --line: #CFC8D3;
+  --accent: #A12D4C;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #F3DDE3;
+  --satin: #E8B6BF;
+  --satin-2: #D3C3E0;
+  --focus: #1F55C9;
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --font-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16121A;
+    --paper-2: #211B26;
+    --ink: #F1EAF0;
+    --ink-soft: #B6AABA;
+    --line: #3E3444;
+    --accent: #F49AB0;
+    --accent-ink: #1A1018;
+    --accent-soft: #3A2030;
+    --satin: #7A3B52;
+    --satin-2: #4A3A5E;
+    --focus: #8DB4FF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #16121A;
+  --paper-2: #211B26;
+  --ink: #F1EAF0;
+  --ink-soft: #B6AABA;
+  --line: #3E3444;
+  --accent: #F49AB0;
+  --accent-ink: #1A1018;
+  --accent-soft: #3A2030;
+  --satin: #7A3B52;
+  --satin-2: #4A3A5E;
+  --focus: #8DB4FF;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 50; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+.wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+
+.ex {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border: 1px dashed var(--ink-soft);
+  color: var(--ink-soft);
+  padding: 0 6px;
+  vertical-align: middle;
+  line-height: 1.6;
+  font-weight: 400;
+  font-style: normal;
+}
+.ph { font-family: var(--font-mono); font-size: .92em; color: var(--accent); }
+.mono { font-family: var(--font-mono); }
+
+/* ---------- En-tête ---------- */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.header-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; position: relative; }
+.brand { display: flex; align-items: baseline; gap: 10px; color: var(--ink); text-decoration: none; min-width: 0; }
+.brand b { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.4rem; letter-spacing: -.01em; white-space: nowrap; }
+.brand small { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-soft); letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 420px) { .brand small { display: none; } }
+.nav { display: flex; align-items: center; gap: 6px; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; }
+.nav a {
+  display: block; padding: 8px 10px; color: var(--ink); text-decoration: none;
+  font-size: .95rem; font-weight: 600; border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--accent); }
+.nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.nav a .n { font-family: var(--font-mono); font-weight: 400; font-size: .7rem; color: var(--ink-soft); margin-right: 4px; }
+.icon-btn {
+  appearance: none; background: none; border: 1px solid var(--line); color: var(--ink);
+  font: 600 .85rem var(--font-body); padding: 7px 10px; cursor: pointer; border-radius: 2px;
+}
+.icon-btn:hover { border-color: var(--ink); }
+.menu-btn { display: none; }
+@media (max-width: 859px) {
+  .menu-btn { display: inline-block; }
+  .nav ul {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; background: var(--paper); border-bottom: 1px solid var(--line);
+    padding-block: 8px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .nav ul.open { display: flex; }
+  .nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); }
+  .nav a[aria-current="page"] { border-bottom-color: var(--line); }
+  .nav li:last-child a { border-bottom: 0; }
+}
+
+/* ---------- Onglets ---------- */
+.tab[hidden] { display: none; }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: 40px 36px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; gap: 32px; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 48px; } .hero { padding-block: 64px 52px; } }
+.kicker { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 16px; }
+.hero h1 {
+  font-family: var(--font-display); font-weight: 500; font-size: clamp(2.3rem, 8vw, 4.8rem);
+  line-height: 1; letter-spacing: -.02em; margin: 0 0 20px;
+}
+.hero h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.hero p.lead { font-size: 1.12rem; max-width: 40ch; color: var(--ink-soft); margin: 0 0 28px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700; font-size: 1rem;
+  padding: 12px 20px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent;
+  border-radius: 0; cursor: pointer; font-family: var(--font-body);
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn:hover { transform: translateY(-1px); }
+
+.score { border-top: 1px solid var(--ink); padding-top: 14px; min-width: 0; }
+.score-head { display: flex; justify-content: space-between; gap: 8px; font-family: var(--font-mono); font-size: .72rem; color: var(--ink-soft); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.counts { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; padding: 0; list-style: none; }
+.counts li {
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: clamp(3.8rem, 16vw, 8.4rem); line-height: .9; color: var(--ink);
+  border-left: 1px solid var(--line); padding-left: 8px;
+  animation: count 3.6s steps(1) infinite;
+}
+.counts li:first-child { border-left: 0; padding-left: 0; }
+.counts li:nth-child(2) { animation-delay: .9s; }
+.counts li:nth-child(3) { animation-delay: 1.8s; }
+.counts li:nth-child(4) { animation-delay: 2.7s; }
+@keyframes count { 0% { color: var(--accent); } 25% { color: var(--ink); } }
+.staff { margin-top: 10px; }
+.staff svg { width: 100%; height: auto; }
+.staff .l { stroke: var(--line); stroke-width: 1; }
+.staff .bar { stroke: var(--ink); stroke-width: 1.5; }
+.staff .p { fill: var(--accent); }
+.staff .q { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.staff .floor { stroke: var(--accent); stroke-width: 1.5; fill: none; }
+.score-cap { font-family: var(--font-mono); font-size: .75rem; color: var(--ink-soft); margin: 8px 0 0; }
+
+/* ---------- Sections ---------- */
+.section { padding-block: 48px; border-bottom: 1px solid var(--line); }
+@media (min-width: 900px) { .section { padding-block: 72px; } }
+.sec-head { display: grid; gap: 8px; margin-bottom: 28px; }
+@media (min-width: 900px) { .sec-head { grid-template-columns: 180px 1fr; align-items: baseline; gap: 32px; } }
+.sec-num { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-soft); letter-spacing: .08em; }
+.sec-num b { color: var(--accent); font-weight: 500; }
+.sec-head h1, .sec-head h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 5.5vw, 3.2rem); line-height: 1.05; letter-spacing: -.015em; margin: 0; }
+.sec-head em { font-style: italic; font-weight: 400; }
+.sec-intro { margin: 8px 0 0; color: var(--ink-soft); max-width: 60ch; font-size: 1rem; }
+.sec-body { display: grid; gap: 24px; min-width: 0; }
+@media (min-width: 900px) { .sec-body { grid-template-columns: 180px minmax(0, 1fr); gap: 32px; } .sec-body > * { grid-column: 2; } }
+.more { margin: 20px 0 0; font-weight: 700; }
+
+/* ---------- Filtres ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; border: 0; }
+.filters legend { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); padding: 0; margin-bottom: 8px; width: 100%; }
+.chip {
+  appearance: none; font: 600 .9rem var(--font-body); color: var(--ink); background: transparent;
+  border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; cursor: pointer;
+}
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.search { margin: 0 0 16px; max-width: 420px; }
+.search label { display: block; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+.search input {
+  width: 100%; font: inherit; color: var(--ink); background: var(--paper);
+  border: 0; border-bottom: 1.5px solid var(--ink-soft); padding: 10px 2px; border-radius: 0;
+}
+.search input:focus { border-color: var(--accent); }
+.count-line { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-soft); margin: 0 0 12px; }
+.empty { padding-block: 24px; color: var(--ink-soft); border-top: 1px solid var(--ink); }
+
+/* ---------- Cartes actu ---------- */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+@media (min-width: 680px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } }
+@media (min-width: 1080px) { .cards.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card { padding-block: 22px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-family: var(--font-mono); font-size: .74rem; color: var(--ink-soft); letter-spacing: .04em; }
+.cat { color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; line-height: 1.2; margin: 0; overflow-wrap: anywhere; }
+.card p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
+.card .go { margin-top: auto; padding-top: 6px; font-weight: 700; font-size: .95rem; }
+
+/* ---------- Agenda ---------- */
+.agenda { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.event { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .event { grid-template-columns: 120px minmax(0, 1fr) 200px; align-items: start; gap: 28px; } }
+.date { font-family: var(--font-display); line-height: .95; }
+.date b { display: block; font-size: 2.4rem; font-weight: 500; }
+.date span { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
+.date.tbd b { font-family: var(--font-mono); font-size: 1rem; font-weight: 400; color: var(--accent); padding-top: 6px; }
+.event h3 { margin: 0 0 4px; font-size: 1.12rem; line-height: 1.3; overflow-wrap: anywhere; }
+.event p { margin: 0; color: var(--ink-soft); font-size: .97rem; }
+.event .type { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin-bottom: 4px; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.event .where { font-family: var(--font-mono); font-size: .82rem; grid-column: 2; display: grid; gap: 6px; }
+.event .where a { font-family: var(--font-body); font-weight: 700; font-size: .92rem; }
+@media (min-width: 760px) { .event .where { grid-column: auto; text-align: right; } }
+
+/* ---------- Shopping ---------- */
+.notice {
+  border: 1px dashed var(--accent); background: var(--accent-soft); color: var(--ink);
+  padding: 12px 16px; margin: 0 0 24px; font-size: .95rem;
+}
+.notice strong { color: var(--accent); }
+.shop-group { margin-bottom: 32px; }
+.shop-group h3 { font-family: var(--font-mono); font-weight: 500; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft); margin: 0 0 8px; }
+.links { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.links li { display: grid; gap: 4px 24px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .links li { grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; } }
+.links b { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; overflow-wrap: anywhere; }
+.links p { margin: 2px 0 0; color: var(--ink-soft); font-size: .95rem; }
+.links a { font-weight: 700; white-space: nowrap; }
+
+/* ---------- Annuaire ---------- */
+.dir { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); display: grid; }
+@media (min-width: 680px) { .dir { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } }
+.fiche { padding-block: 20px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fiche h3 { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.25; overflow-wrap: anywhere; }
+.fiche .meta { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.fiche p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+.fiche a { font-weight: 700; font-size: .95rem; }
+
+/* ---------- Accueil : qui écrit ---------- */
+.writer { display: grid; gap: 24px; }
+@media (min-width: 900px) { .writer { grid-template-columns: 1.3fr 1fr; gap: 56px; } }
+.writer p { margin: 0 0 14px; max-width: 60ch; }
+.writer p.big { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.7rem); line-height: 1.3; }
+.facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.facts li { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.facts span:first-child { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; }
+.facts span:last-child { text-align: right; font-weight: 600; }
+
+/* ---------- Pied de page ---------- */
+.site-footer { padding-block: 40px; font-size: .92rem; color: var(--ink-soft); }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; align-items: baseline; }
+.foot-in .sign { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; color: var(--ink); }
+.propose { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.mail {
+  font-family: var(--font-mono); font-size: .95rem; user-select: all; -webkit-user-select: all;
+  background: var(--paper-2); padding: 4px 8px; display: inline-block; word-break: break-all; color: var(--ink);
+}
+.legal { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; }
+.legal summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.legal div { padding-top: 10px; max-width: 70ch; }
+.legal dl { margin: 0; display: grid; gap: 10px; }
+.legal dt { font-family: var(--font-mono); font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); }
+.legal dd { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .btn:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="#accueil"><b data-site-name>Volc'en danse</b><small>Auvergne</small></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#accueil"><span class="n">01</span>Accueil</a></li>
+        <li><a href="#actu"><span class="n">02</span>Actu</a></li>
+        <li><a href="#agenda"><span class="n">03</span>Agenda</a></li>
+        <li><a href="#shopping"><span class="n">04</span>Shopping</a></li>
+        <li><a href="#annuaire"><span class="n">05</span>Annuaire</a></li>
+      </ul>
+      <button class="icon-btn theme-btn" type="button" aria-label="Changer de thème clair ou sombre">Thème</button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+
+  <!-- ============ ACCUEIL ============ -->
+  <section class="tab" id="accueil" data-tab aria-label="Accueil">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Spectacles · stages · auditions · coulisses</p>
+          <h1>L'actu de la danse <em>contemporaine</em> en Auvergne.</h1>
+          <p class="lead">Ce qui se crée, se joue et s'apprend autour de Clermont-Ferrand, raconté depuis le studio par une élève danseuse.</p>
+          <div class="ctas">
+            <a class="btn primary" href="#actu">Lire l'actu</a>
+            <a class="btn" href="#agenda">Voir l'agenda</a>
+          </div>
+        </div>
+        <div class="score" aria-label="Partition de mouvement : on compte cinq, six, sept, huit">
+          <div class="score-head"><span>Partition n° 1</span><span>Au sol, puis debout</span></div>
+          <ol class="counts" aria-hidden="true"><li>5</li><li>6</li><li>7</li><li>8</li></ol>
+          <div class="staff" aria-hidden="true">
+            <svg viewBox="0 0 400 70" preserveAspectRatio="none" focusable="false">
+              <line class="l" x1="0" y1="10" x2="400" y2="10"/>
+              <line class="l" x1="0" y1="22" x2="400" y2="22"/>
+              <line class="l" x1="0" y1="34" x2="400" y2="34"/>
+              <line class="l" x1="0" y1="46" x2="400" y2="46"/>
+              <line class="l" x1="0" y1="58" x2="400" y2="58"/>
+              <line class="bar" x1="100" y1="6" x2="100" y2="62"/>
+              <line class="bar" x1="200" y1="6" x2="200" y2="62"/>
+              <line class="bar" x1="300" y1="6" x2="300" y2="62"/>
+              <path class="floor" d="M10 58 C60 58 70 30 120 34 S190 58 230 46 S300 10 340 22 S385 52 395 58"/>
+              <circle class="p" cx="30" cy="58" r="5"/>
+              <circle class="q" cx="80" cy="46" r="5"/>
+              <circle class="p" cx="140" cy="34" r="5"/>
+              <circle class="q" cx="180" cy="46" r="5"/>
+              <circle class="p" cx="250" cy="34" r="5"/>
+              <circle class="p" cx="320" cy="22" r="5"/>
+              <circle class="q" cx="370" cy="46" r="5"/>
+            </svg>
+          </div>
+          <p class="score-cap">sol · poids · souffle · lâcher, et on recommence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num"><b>01</b> / dernières actus</span><h2>À la <em>une</em></h2></div>
+        <div class="sec-body">
+          <div>
+            <ul class="cards c3" id="home-actus"></ul>
+            <p class="more"><a href="#actu">Toutes les actus →</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num"><b>02</b> / prochains rendez-vous</span><h2>Bientôt <em>sur le plateau</em></h2></div>
+        <div class="sec-body">
+          <div>
+            <ul class="agenda" id="home-agenda"></ul>
+            <p class="more"><a href="#agenda">Tout l'agenda →</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num"><b>03</b> / qui écrit ici</span><h2>Depuis <em>le studio</em></h2></div>
+        <div class="sec-body">
+          <div class="writer">
+            <div>
+              <p class="big">Ici, c'est Céleste. J'apprends la danse contemporaine, et j'ai envie de partager ce qui bouge autour de moi.</p>
+              <p>Le travail au sol, le poids qu'on donne et qu'on reçoit, l'improvisation, les pièces qui nous déplacent : je note ce que je vois, ce que j'apprends et les rendez-vous à ne pas manquer dans la région.</p>
+              <p>Ce site est un carnet personnel, tenu sans but commercial. Une info à partager ? Écrivez via le lien « Proposer une info » en bas de page.</p>
+            </div>
+            <ul class="facts">
+              <li><span>Rédaction</span><span>Céleste, élève danseuse</span></li>
+              <li><span>Style</span><span>Danse contemporaine</span></li>
+              <li><span>Territoire</span><span>Clermont-Ferrand &amp; Auvergne</span></li>
+              <li><span>Rubriques</span><span>Actu, agenda, shopping, annuaire</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTU ============ -->
+  <section class="tab section" id="actu" data-tab aria-labelledby="t-actu" hidden>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num"><b>02</b> / 05</span>
+        <div><h1 id="t-actu">L'<em>actu</em></h1><p class="sec-intro">Spectacles vus, portraits, stages, auditions et coulisses du studio.</p></div>
+      </div>
+      <div class="sec-body">
+        <div>
+          <fieldset class="filters" id="f-actu"><legend>Filtrer par catégorie</legend></fieldset>
+          <p class="count-line" id="c-actu" aria-live="polite"></p>
+          <ul class="cards" id="list-actu"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA ============ -->
+  <section class="tab section" id="agenda" data-tab aria-labelledby="t-agenda" hidden>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num"><b>03</b> / 05</span>
+        <div><h1 id="t-agenda">Agenda</h1><p class="sec-intro">Les rendez-vous danse de la région, dans l'ordre chronologique. Vérifiez toujours les infos sur le site officiel.</p></div>
+      </div>
+      <div class="sec-body">
+        <div>
+          <fieldset class="filters" id="f-agenda"><legend>Filtrer par type</legend></fieldset>
+          <p class="count-line" id="c-agenda" aria-live="polite"></p>
+          <ul class="agenda" id="list-agenda"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOPPING ============ -->
+  <section class="tab section" id="shopping" data-tab aria-labelledby="t-shopping" hidden>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num"><b>04</b> / 05</span>
+        <div><h1 id="t-shopping">Shopping</h1><p class="sec-intro">Une petite sélection de boutiques pour s'équiper : chaussons, tenues, livres, accessoires.</p></div>
+      </div>
+      <div class="sec-body">
+        <div>
+          <p class="notice"><strong>Liens vers des boutiques.</strong> <span data-site-name>Volc'en danse</span> ne vend rien et n'est pas rémunéré : aucun lien sponsorisé, aucune commission.</p>
+          <div id="list-shopping"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANNUAIRE ============ -->
+  <section class="tab section" id="annuaire" data-tab aria-labelledby="t-annuaire" hidden>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num"><b>05</b> / 05</span>
+        <div><h1 id="t-annuaire">Annuaire</h1><p class="sec-intro">Scènes, formations, compagnies, festivals et associations de danse en Auvergne.</p></div>
+      </div>
+      <div class="sec-body">
+        <div>
+          <div class="search">
+            <label for="q-annuaire">Rechercher (nom, ville, mot-clé)</label>
+            <input id="q-annuaire" type="search" autocomplete="off" placeholder="ex. Clermont, festival…">
+          </div>
+          <fieldset class="filters" id="f-annuaire"><legend>Filtrer par catégorie</legend></fieldset>
+          <p class="count-line" id="c-annuaire" aria-live="polite"></p>
+          <ul class="dir" id="list-annuaire"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-in">
+      <span class="sign" data-site-name>Volc'en danse</span>
+      <span>© <span id="year">2026</span> <span data-site-name>Volc'en danse</span> · Auvergne</span>
+      <a href="#mentions" id="legal-link">Mentions légales</a>
+    </div>
+    <p class="propose">
+      <a href="mailto:infos@volcendanse.exemple?subject=Proposer%20une%20info">Proposer une info</a>
+      <span class="mail">infos@volcendanse.exemple</span>
+      <span class="ex">exemple</span>
+    </p>
+    <details class="legal" id="mentions">
+      <summary>Mentions légales</summary>
+      <div>
+        <dl>
+          <dt>Éditeur</dt>
+          <dd>Site personnel, non professionnel et sans but commercial. Éditeur non professionnel ; identité communiquée à l'hébergeur (art. 6-III-2 LCEN).</dd>
+          <dt>Responsable légal</dt>
+          <dd>La rédactrice étant mineure, le site est placé sous la responsabilité d'un parent, joignable via l'adresse de contact ci-dessus.</dd>
+          <dt>Hébergeur</dt>
+          <dd>GitHub Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</dd>
+          <dt>Cookies et données</dt>
+          <dd>Aucun cookie, aucune mesure d'audience, aucun formulaire. Le seul réglage mémorisé (thème clair ou sombre) reste dans votre navigateur.</dd>
+          <dt>Liens externes</dt>
+          <dd>Les liens vers d'autres sites (boutiques, salles, compagnies) sont fournis à titre d'information ; leur contenu relève de leurs éditeurs. Aucun lien n'est rémunéré.</dd>
+        </dl>
+      </div>
+    </details>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   NOM DU SITE : modifier ici (et dans la balise <title>).
+   ========================================================== */
+const SITE_NAME = "Volc'en danse";
+
+/* ==========================================================
+   DONNÉES : remplacer les entrées d'exemple par les vraies.
+   - date : "AAAA-MM-JJ" (laisser "" si pas encore connue)
+   - exemple : true affiche le badge pointillé « exemple »
+   ========================================================== */
+const DATA = {
+  actus: [
+    { titre: "May B de Maguy Marin arrive à La Comédie", categorie: "Spectacle", date: "2026-10-19", resume: "Une pièce culte de la danse contemporaine, créée en 1981 d'après Beckett, est programmée salle de l'Horizon du 24 au 26 novembre. Pourquoi il ne faut pas la rater.", lien: "https://www.lacomediedeclermont.com/events/may-b", exemple: true },
+    { titre: "Boom'Structur devient centre chorégraphique national", categorie: "Coulisses", date: "", resume: "Depuis juillet 2025, le lieu du boulevard Gustave-Flaubert est l'un des 16 CDCN de France. Ce que ça change pour les danseurs de la région, amateurs compris.", lien: "https://www.boomstructur.fr", exemple: true },
+    { titre: "Rencontre avec une chorégraphe de la région", categorie: "Portrait", date: "", resume: "Comment elle construit une pièce à partir de l'improvisation, et pourquoi elle commence toujours par la respiration.", lien: "", exemple: true },
+    { titre: "Stage d'improvisation et contact : mes notes", categorie: "Stage", date: "", resume: "Trois jours pour apprendre à donner et recevoir le poids. Ce qu'on a travaillé, ce qui m'a surprise.", lien: "", exemple: true },
+    { titre: "Auditions de la saison : comment s'y préparer", categorie: "Audition", date: "", resume: "Échauffement, tenue, phrase imposée, improvisation : les conseils glanés auprès des profs et des élèves plus avancés.", lien: "", exemple: true },
+    { titre: "Une semaine de répétitions avant le spectacle", categorie: "Coulisses", date: "", resume: "Filages, lumières, trac et goûter partagé : le carnet de bord d'une semaine pas comme les autres.", lien: "", exemple: true }
+  ],
+  agenda: [
+    { titre: "May B, Maguy Marin", type: "spectacle", date: "2026-11-24", lieu: "La Comédie, salle de l'Horizon", ville: "Clermont-Ferrand", description: "Pièce culte inspirée de Beckett. Représentations les 24, 25 et 26 novembre 2026.", lien: "https://www.lacomediedeclermont.com/events/may-b", exemple: false },
+    { titre: "Assembly Hall, Crystal Pite et Jonathon Young", type: "spectacle", date: "2027-04-08", lieu: "La Comédie, salle de l'Horizon", ville: "Clermont-Ferrand", description: "Danse et théâtre mêlés par la compagnie Kidd Pivot. Les 8 et 9 avril 2027.", lien: "https://www.lacomediedeclermont.com/events/assembly-hall", exemple: false },
+    { titre: "Après moi, le déluge, (LA)HORDE et le Ballet national de Marseille", type: "spectacle", date: "2027-05-26", lieu: "La Comédie, salle de l'Horizon", ville: "Clermont-Ferrand", description: "Les 26, 27 et 28 mai 2027. Dès 14 ans.", lien: "https://www.lacomediedeclermont.com/events/apres-moi-le-deluge", exemple: false },
+    { titre: "Training contemporain ouvert aux amateurs", type: "stage", date: "", lieu: "Boom'Structur", ville: "Clermont-Ferrand", description: "Cours chaque mercredi soir. Horaires et inscriptions sur le site.", lien: "https://www.boomstructur.fr/pratiquer-et-se-former/", exemple: true }
+  ],
+  shopping: [
+    { nom: "Repetto", categorie: "chaussons", description: "Marque française historique : demi-pointes, pointes, justaucorps. Vente en ligne.", lien: "https://repetto.com/collections/catalogue-danse", exemple: false },
+    { nom: "DanseBoutique", categorie: "chaussons", description: "Site spécialisé danse, large choix de chaussons et de tenues.", lien: "https://danseboutique.com", exemple: false },
+    { nom: "Decathlon Clermont-Ferrand (La Pardieu)", categorie: "tenues", description: "Rayon danse en magasin : leggings, brassières, chaussons à petit prix.", lien: "https://www.decathlon.fr", exemple: false },
+    { nom: "Stala'Danse", categorie: "accessoires", description: "Boutique d'Orléans qui vend en ligne Bloch, Capezio, Werner Kern et des accessoires.", lien: "https://staladanse.com", exemple: false },
+    { nom: "[Librairie]", categorie: "livres", description: "Livres sur l'histoire de la danse contemporaine et les chorégraphes.", lien: "", exemple: true }
+  ],
+  annuaire: [
+    { nom: "La Comédie de Clermont-Ferrand, scène nationale", categorie: "Scène", ville: "Clermont-Ferrand", description: "Le grand théâtre du boulevard François-Mitterrand. Danse, théâtre et musique toute la saison, avec des tarifs jeunes.", lien: "https://www.lacomediedeclermont.com", exemple: false },
+    { nom: "Le Sémaphore", categorie: "Scène", ville: "Cébazat", description: "Salle de spectacle au nord de Clermont : danse, théâtre, cirque, musique et résidences d'artistes.", lien: "https://www.cebazat.fr", exemple: false },
+    { nom: "Maison de la Culture", categorie: "Scène", ville: "Clermont-Ferrand", description: "Salle municipale (salles Jean-Cocteau et Boris-Vian) qui accueille spectacles de danse et rencontres amateurs.", lien: "https://clermont-ferrand.fr/agenda", exemple: false },
+    { nom: "Boom'Structur, CDCN", categorie: "Association", ville: "Clermont-Ferrand", description: "Centre de développement chorégraphique national depuis 2025 : résidences, festivals, cours et stages pour amateurs.", lien: "https://www.boomstructur.fr", exemple: false },
+    { nom: "Conservatoire Emmanuel-Chabrier", categorie: "Formation", ville: "Clermont-Ferrand", description: "Danse contemporaine, classique, jazz, hip-hop et plus. Prépare aussi aux filières professionnelles.", lien: "https://www.clermontmetropole.eu/bouger-se-divertir/le-dynamisme-culturel/conservatoire-emmanuel-chabrier/danse/", exemple: false },
+    { nom: "Créa'Art", categorie: "Formation", ville: "Chamalières", description: "École de danse associative fondée en 1993, avec cours de contemporain et une compagnie.", lien: "https://www.studio-crea-art.com", exemple: false },
+    { nom: "INS School", categorie: "Formation", ville: "Clermont-Ferrand", description: "École de danses urbaines : popping, locking, waacking, house, afro, K-pop.", lien: "https://www.insschool.fr", exemple: false },
+    { nom: "Compagnie Supreme Legacy", categorie: "Compagnie", ville: "Clermont-Ferrand", description: "Compagnie d'arts urbains autour du breaking, fondée en 2013.", lien: "https://supreme-legacy.fr", exemple: false },
+    { nom: "On va tout fêter !", categorie: "Festival", ville: "Clermont-Ferrand", description: "Biennale de danse contemporaine de Boom'Structur dans plus de 30 lieux. Première édition à l'automne 2026.", lien: "https://www.boomstructur.fr", exemple: false },
+    { nom: "1km de danse", categorie: "Festival", ville: "Clermont-Ferrand", description: "Fête gratuite de la danse au centre-ville, chaque année en juin : groupes amateurs, battle et grand bal.", lien: "https://www.boomstructur.fr", exemple: false },
+    { nom: "Les Trans'urbaines", categorie: "Festival", ville: "Clermont-Ferrand", description: "Festival de culture hip-hop créé en 1997, chaque année à l'automne.", lien: "https://www.transurbaines.com", exemple: false },
+    { nom: "Playtime", categorie: "Festival", ville: "Clermont-Ferrand", description: "Week-end gratuit de La Comédie pendant les Journées du patrimoine, avec spectacles et ateliers dansés.", lien: "https://www.lacomediedeclermont.com/events/playtime", exemple: false },
+    { nom: "SISMIK Summer Dance Camp", categorie: "Festival", ville: "Beaumont", description: "Stage-festival d'été de cinq jours avec une quinzaine de chorégraphes : contemporain, floorwork, hip-hop, afro.", lien: "https://sismikcamp.com", exemple: false },
+    { nom: "Saison Impulsions (Puy-de-Dôme)", categorie: "Festival", ville: "Tout le département", description: "Plus de 20 spectacles du Conseil départemental, d'octobre à mai, dans tout le Puy-de-Dôme.", lien: "https://spectacles.puy-de-dome.fr", exemple: false },
+    { nom: "De fil en chemin", categorie: "Association", ville: "Clermont-Ferrand", description: "Rencontres départementales de danse amateur de la Ligue de l'enseignement, chaque printemps.", lien: "https://www.helloasso.com/associations/federation-des-associations-laiques-du-puy-de-dome", exemple: false }
+  ]
+};
+
+/* ==========================================================
+   Libellés des filtres (ordre d'affichage)
+   ========================================================== */
+const CATS_ACTU = ["Spectacle", "Portrait", "Stage", "Audition", "Coulisses"];
+const TYPES_AGENDA = { spectacle: "Spectacle", stage: "Stage", festival: "Festival", audition: "Audition" };
+const CATS_SHOP = { chaussons: "Chaussons & demi-pointes", tenues: "Tenues", livres: "Livres", accessoires: "Accessoires" };
+const CATS_ANNUAIRE = ["Scène", "Formation", "Compagnie", "Festival", "Association"];
+const TABS = ["accueil", "actu", "agenda", "shopping", "annuaire"];
+
+(function () {
+  "use strict";
+  var root = document.documentElement;
+
+  /* ---- Nom du site ---- */
+  document.querySelectorAll("[data-site-name]").forEach(function (el) { el.textContent = SITE_NAME; });
+
+  /* ---- Utilitaires ---- */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : ""; }
+  function ext(u, label, sr) {
+    var url = safeUrl(u);
+    if (!url) return "";
+    return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) +
+      ' <span aria-hidden="true">↗</span><span class="sr-only"> (' + esc(sr) + ', nouvel onglet)</span></a>';
+  }
+  function badge(item) { return item.exemple ? ' <span class="ex">exemple</span>' : ""; }
+  var MOIS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+  function parseDate(d) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || "");
+    return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null;
+  }
+  function fmtDate(d) {
+    var dt = parseDate(d);
+    return dt ? dt.getDate() + " " + MOIS[dt.getMonth()] + " " + dt.getFullYear() : "[date]";
+  }
+  function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+
+  /* ---- Rendus ---- */
+  function actuCard(a) {
+    return '<li class="card">' +
+      '<div class="card-top"><span class="cat">' + esc(a.categorie) + '</span><span>' + esc(fmtDate(a.date)) + '</span>' + badge(a) + '</div>' +
+      '<h3>' + esc(a.titre) + '</h3>' +
+      '<p>' + esc(a.resume) + '</p>' +
+      (safeUrl(a.lien) ? '<span class="go">' + ext(a.lien, "Lire la suite", a.titre) + '</span>' : "") +
+      '</li>';
+  }
+  function eventRow(e) {
+    var dt = parseDate(e.date);
+    var dateHtml = dt
+      ? '<div class="date"><b>' + String(dt.getDate()).padStart(2, "0") + '</b><span>' + MOIS[dt.getMonth()] + ' ' + dt.getFullYear() + '</span></div>'
+      : '<div class="date tbd"><b>[date]</b><span>à venir</span></div>';
+    return '<li class="event">' + dateHtml +
+      '<div><div class="type"><span>' + esc(TYPES_AGENDA[e.type] || e.type) + '</span>' + badge(e) + '</div>' +
+      '<h3>' + esc(e.titre) + '</h3><p>' + esc(e.description) + '</p></div>' +
+      '<div class="where"><span>' + esc(e.lieu) + ', ' + esc(e.ville) + '</span>' + ext(e.lien, "Site officiel", e.titre) + '</div>' +
+      '</li>';
+  }
+  function sortedAgenda() {
+    return DATA.agenda.map(function (e, i) { return { e: e, i: i, t: parseDate(e.date) }; })
+      .sort(function (a, b) {
+        if (a.t && b.t) return a.t - b.t || a.i - b.i;
+        if (a.t) return -1;
+        if (b.t) return 1;
+        return a.i - b.i;
+      }).map(function (x) { return x.e; });
+  }
+  function sortedActus() {
+    return DATA.actus.map(function (a, i) { return { a: a, i: i, t: parseDate(a.date) }; })
+      .sort(function (x, y) {
+        if (x.t && y.t) return y.t - x.t || x.i - y.i;
+        if (x.t) return -1;
+        if (y.t) return 1;
+        return x.i - y.i;
+      }).map(function (x) { return x.a; });
+  }
+  function upcoming() {
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    return sortedAgenda().filter(function (e) { var t = parseDate(e.date); return !t || t >= today; });
+  }
+
+  /* ---- Filtres génériques ---- */
+  function buildChips(fieldset, options, onChange) {
+    var current = "";
+    var all = [["", "Tout"]].concat(options);
+    all.forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.dataset.value = o[0];
+      b.textContent = o[1]; b.setAttribute("aria-pressed", o[0] === "" ? "true" : "false");
+      fieldset.appendChild(b);
+    });
+    fieldset.addEventListener("click", function (ev) {
+      var b = ev.target.closest(".chip"); if (!b) return;
+      current = b.dataset.value;
+      fieldset.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c === b ? "true" : "false"); });
+      onChange(current);
+    });
+  }
+  function countLine(el, n, total, mot) {
+    el.textContent = n + " " + mot + (n > 1 && !/s$/.test(mot) ? "s" : "") + (n !== total ? " sur " + total : "");
+  }
+  function emptyHtml(msg) { return '<li class="empty">' + esc(msg) + '</li>'; }
+
+  /* ---- Accueil ---- */
+  document.getElementById("home-actus").innerHTML = sortedActus().slice(0, 3).map(actuCard).join("") || emptyHtml("Pas encore d'actu.");
+  document.getElementById("home-agenda").innerHTML = upcoming().slice(0, 3).map(eventRow).join("") || emptyHtml("Aucun rendez-vous à venir pour l'instant.");
+
+  /* ---- Actu ---- */
+  (function () {
+    var list = document.getElementById("list-actu"), c = document.getElementById("c-actu");
+    function render(cat) {
+      var all = sortedActus();
+      var items = all.filter(function (a) { return !cat || a.categorie === cat; });
+      list.innerHTML = items.map(actuCard).join("") || emptyHtml("Aucune actu dans cette catégorie pour l'instant.");
+      countLine(c, items.length, all.length, "article");
+    }
+    buildChips(document.getElementById("f-actu"), CATS_ACTU.map(function (k) { return [k, k]; }), render);
+    render("");
+  })();
+
+  /* ---- Agenda ---- */
+  (function () {
+    var list = document.getElementById("list-agenda"), c = document.getElementById("c-agenda");
+    function render(type) {
+      var all = sortedAgenda();
+      var items = all.filter(function (e) { return !type || e.type === type; });
+      list.innerHTML = items.map(eventRow).join("") || emptyHtml("Aucun rendez-vous de ce type pour l'instant.");
+      countLine(c, items.length, all.length, "rendez-vous");
+    }
+    buildChips(document.getElementById("f-agenda"), Object.keys(TYPES_AGENDA).map(function (k) { return [k, TYPES_AGENDA[k]]; }), render);
+    render("");
+  })();
+
+  /* ---- Shopping ---- */
+  (function () {
+    var box = document.getElementById("list-shopping");
+    box.innerHTML = Object.keys(CATS_SHOP).map(function (k) {
+      var items = DATA.shopping.filter(function (s) { return s.categorie === k; });
+      if (!items.length) return "";
+      return '<section class="shop-group" aria-label="' + esc(CATS_SHOP[k]) + '"><h3>' + esc(CATS_SHOP[k]) + '</h3><ul class="links">' +
+        items.map(function (s) {
+          return '<li><div><b>' + esc(s.nom) + '</b>' + badge(s) + '<p>' + esc(s.description) + '</p></div>' + ext(s.lien, "Voir la boutique", s.nom) + '</li>';
+        }).join("") + '</ul></section>';
+    }).join("");
+  })();
+
+  /* ---- Annuaire ---- */
+  (function () {
+    var list = document.getElementById("list-annuaire"), c = document.getElementById("c-annuaire");
+    var q = document.getElementById("q-annuaire"), cat = "";
+    function render() {
+      var term = norm(q.value.trim());
+      var items = DATA.annuaire.filter(function (f) {
+        if (cat && f.categorie !== cat) return false;
+        if (!term) return true;
+        return norm([f.nom, f.ville, f.description, f.categorie].join(" ")).indexOf(term) !== -1;
+      });
+      list.innerHTML = items.map(function (f) {
+        return '<li class="fiche"><div class="meta"><span class="cat">' + esc(f.categorie) + '</span><span>' + esc(f.ville) + '</span>' + badge(f) + '</div>' +
+          '<h3>' + esc(f.nom) + '</h3><p>' + esc(f.description) + '</p>' + ext(f.lien, "Site officiel", f.nom) + '</li>';
+      }).join("") || emptyHtml("Aucune fiche ne correspond à votre recherche.");
+      countLine(c, items.length, DATA.annuaire.length, "fiche");
+    }
+    buildChips(document.getElementById("f-annuaire"), CATS_ANNUAIRE.map(function (k) { return [k, k]; }), function (v) { cat = v; render(); });
+    q.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---- Onglets via location.hash ---- */
+  var navLinks = document.querySelectorAll(".nav a");
+  var first = true;
+  function showTab() {
+    var id = (location.hash || "").slice(1);
+    var target = id;
+    if (TABS.indexOf(id) === -1) {
+      var el = id ? document.getElementById(id) : null;
+      var parentTab = el ? el.closest("[data-tab]") : null;
+      target = parentTab ? parentTab.id : "accueil";
+    }
+    document.querySelectorAll("[data-tab]").forEach(function (s) { s.hidden = s.id !== target; });
+    navLinks.forEach(function (a) {
+      if (a.getAttribute("href") === "#" + target) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    var labels = { accueil: "", actu: "Actu", agenda: "Agenda", shopping: "Shopping", annuaire: "Annuaire" };
+    document.title = labels[target] ? labels[target] + " · " + SITE_NAME : SITE_NAME;
+    if (id === "mentions") {
+      var m = document.getElementById("mentions"); m.open = true; m.scrollIntoView();
+    } else if (TABS.indexOf(id) !== -1 || !id) {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(function () { window.scrollTo(0, 0); });
+      if (!first) document.getElementById("contenu").focus({ preventScroll: true });
+    }
+    first = false;
+  }
+  window.addEventListener("hashchange", showTab);
+  showTab();
+
+  /* ---- Thème ---- */
+  var themeBtn = document.querySelector(".theme-btn");
+  try { var saved = localStorage.getItem("dc-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  themeBtn.addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    var dark = cur ? cur === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("dc-theme", next); } catch (e) {}
+  });
+
+  /* ---- Menu mobile ---- */
+  var menuBtn = document.querySelector(".menu-btn");
+  var menu = document.getElementById("menu");
+  menuBtn.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) { menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  });
+
+  document.getElementById("legal-link").addEventListener("click", function () { document.getElementById("mentions").open = true; });
+  var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
